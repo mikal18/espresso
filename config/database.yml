@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
   database: coffee_check_development
+  username: coffee
+  password: 123456
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: coffee_check_production
-  username: coffee_check
-  password: <%= ENV['COFFEE_CHECK_DATABASE_PASSWORD'] %>
+  username: coffee
+  password: 123456
