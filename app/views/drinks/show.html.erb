@@ -1,0 +1,28 @@
+<h1><%= @drink.name %></h1>
+<div id="nav-links">
+  <%= link_to 'Back', [@drink.shop, @shop], :class => 'fa fa-arrow-left' %> <%= link_to 'Delete Coffee', [@drink.shop, @drink],
+               method: :delete,
+               :class => 'fa fa-trash-o' %> <%= link_to 'Edit Coffee', edit_shop_drink_path(@drink.shop, @drink), :class => 'fa fa-pencil-square-o' %>
+</div>
+<% if @drink.img_url == "" %>
+<% @drink.img_url = @placeholder_drink %>
+<% end %>
+<img class="drink" src="<%= @drink.img_url %>">
+<ul class="drink-details">
+  <% if @drink.kind_of_drink != "" %>
+    <li class="fa fa-heart"><strong>Type:</strong> <%= @drink.kind_of_drink %></li>
+  <% end %>
+  <% if @drink.roast.present? %>
+     <li class="fa fa-coffee"><strong>Roast:</strong> <%= @drink.roast %></li>
+  <% end %>
+  <% if @drink.flavor.present? %>
+    <li class="fa fa-spoon"><strong>Flavor:</strong> <%= @drink.flavor %></li>
+  <% end %>
+</ul>
+
+<% if @drink.thoughts.present? %>
+<div class="detail-page">
+  <h2>Thoughts</h2>
+  <p><%= @drink.thoughts %></p>
+</div>
+<% end %>

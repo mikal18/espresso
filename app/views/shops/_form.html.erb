@@ -1,0 +1,32 @@
+<div id="error_explanation">
+  <% @shop.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+</div>
+
+<%= form_for @shop do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :img_url, 'Image URL' %><br>
+    <%= f.text_field :img_url %>
+  </p>
+
+  <p>
+    <%= f.label :shop_type %><br>
+    <%= f.select :shop_type, ['Chain', 'Hipster', 'Local'], include_blank: "Select A Type" %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

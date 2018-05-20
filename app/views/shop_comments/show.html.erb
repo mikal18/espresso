@@ -1,0 +1,9 @@
+<h1><%= @shop_comment.heading %></h1>
+<div id="nav-links">
+  <%= link_to 'Back', [@shop_comment.shop, @shop], :class => 'fa fa-arrow-left' %> <%= link_to 'Delete Detail', [@shop_comment.shop, @shop_comment],
+               method: :delete,
+               :class => 'fa fa-trash-o' %> <%= link_to 'Edit Detail', edit_shop_shop_comment_path(@shop_comment.shop, @shop_comment), :class => 'fa fa-pencil-square-o' %>
+</div>
+<div class="detail-page">
+<p><%= @shop_comment.body %></p>
+</div>

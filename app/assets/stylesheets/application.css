@@ -1,0 +1,202 @@
+/*
+ *= require font-awesome
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700);
+
+.fa:before {
+    margin-right: 5px;
+    margin-left: 20px;
+}
+a.fa {
+  text-decoration: none;
+}
+/* plus sign styling */
+/*.fa-plus-circle:before {
+    margin-left: 0 !important;
+}*/
+
+a {
+    text-decoration: none;
+}
+
+header, footer {
+  background: #101618;
+}
+h1#logo {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  display: inline-block;
+  padding: 15px 0;
+}
+#logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+nav {
+  float: right;
+  padding-top: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.2em;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background: url('/images/coffee-beans.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.content {
+  background: rgba(255,255,255,0.8);
+  padding: 0 20px 20px 20px;
+  min-height: 500px;
+}
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h1, h2 {
+    padding-top: 30px;
+    text-align: center;
+}
+body.welcome {
+  background: url('/images/coffee-time.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.welcome .content {
+    background: transparent;
+}
+.welcome h2 {
+  font-size: 3.8em;
+  padding: 0;
+  margin: 0;
+  text-shadow: 2px 2px white;
+}
+.welcome h3 {
+  font-size: 2.8em;
+  margin: 0 0 0 40px;
+  padding: 10px;
+  text-shadow: 2px 2px white;
+}
+.banner {
+  max-width: 340px;
+  margin: auto;
+  margin-top: 18%;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+/* For shops/drink views */
+#nav-links {
+    text-align: right;
+    padding-bottom: 15px;
+    margin-top: -10px;
+}
+#nav-links a {
+  color: black;
+}
+
+/* For shop pages */
+img.shop, img.drink {
+    max-width: 100%;
+    width: 100%;
+}
+.drink-grid img {
+  width: 200px;
+}
+.shop-grid img {
+  width: 400px;
+}
+.detail {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom: 1px solid #737373;
+}
+
+.drink-grid, .shop-grid {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+}
+.favorite-drinks, .favorite-shops {
+  text-align: center;
+}
+/* Details */
+.detail-page {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Form Styling */
+.form-block {
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+}
+input, select {
+  height: 60px;
+}
+textarea {
+  height: 90px;
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid #737373;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+input[type="submit"] {
+    padding: 0 10px 0 10px;
+    width: auto;
+    min-width: 250px;
+    cursor: pointer;
+    color: white;
+    background: black;
+}
+input[type="submit"]:hover {
+  background: gray;
+}
+input[type='checkbox'] {
+  width: auto;
+}
+.field {
+    margin-bottom: 15px;
+}
+
+/* Notification messages */
+.flash {
+    border-bottom: 1px solid #737373;
+    padding: 1em;
+}
+
+.alert  { color: red;  }
+.notice { color: blue; }
+#error_explanation {
+    color: red;
+}
+.user-info {
+  text-align: right;
+  padding-top: 20px;
+}

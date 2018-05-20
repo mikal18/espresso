@@ -1,0 +1,44 @@
+<h1><%= @shop.name %></h1>
+<div id="nav-links">
+  <%= link_to 'Back', shops_path, :class => 'fa fa-arrow-left' %> <%= link_to 'Delete Shop', shop_path(@shop),
+                method: :delete,
+                :class => 'fa fa-trash-o' %> <%= link_to 'Edit Shop', edit_shop_path(@shop), :class => 'fa fa-pencil-square-o' %> <%= link_to 'Add Coffee', new_shop_drink_path(@shop), :class => 'fa fa-plus-circle' %> <%= link_to 'Add a Detail', new_shop_shop_comment_path(@shop), :class => 'fa fa-comment' %>
+</div>
+  <% if @shop.img_url == "" %>
+  <% @shop.img_url = @placeholder_shop %>
+  <% end %>
+  <img class="shop" src="<%= @shop.img_url %>">
+
+  <ul>
+    <% if @shop.shop_type.present? %>
+    <li class="fa fa-bars"><strong>Type:</strong> <%= @shop.shop_type %></li>
+    <% end %>
+    <% if @shop.address.present? %>
+    <li class="fa fa-map-marker"><strong>Address:</strong> <%= @shop.address %></li>
+    <% end %>
+  </ul>
+
+  <% if @shop.shop_comments.present? %>
+      <h2>Details</h2>
+      <% @shop.shop_comments.each do |comment| %>
+        <div class="detail">
+          <h3><%= link_to comment.heading, shop_shop_comment_path(@shop, comment) %></h3>
+          <p><%= comment.body %></p>
+        </div>
+      <% end %>
+<% end %>
+
+  <% if @shop.drinks.present? %>
+    <div class="favorite-drinks">
+      <h2>Favorite Drinks</h2>
+      <% @shop.drinks.sort { |a,b| a.name <=> b.name }.each do |drink| %>
+        <div class="drink-grid">
+          <p><%= link_to drink.name, shop_drink_path(@shop, drink) %></p>
+          <% if drink.img_url == "" %>
+          <% drink.img_url = @placeholder_drink %>
+          <% end %>
+          <%= link_to (image_tag drink.img_url), shop_drink_path(@shop, drink) %>
+        </div>
+      <% end %>
+    </div>
+<% end %>

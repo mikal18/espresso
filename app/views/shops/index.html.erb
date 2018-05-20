@@ -1,0 +1,15 @@
+<h1>Shops</h1>
+<div id="nav-links">
+  <%= link_to 'Add a shop', new_shop_path, :class => 'fa fa-plus-circle' %>
+</div>
+<div class="favorite-shops">
+  <% @shops.sort { |a,b| a.name <=> b.name }.each do |shop| %>
+  <div class="shop-grid">
+    <p><%= link_to shop.name, shop_path(shop) %></p>
+    <% if shop.img_url == "" %>
+    <% shop.img_url = @placeholder_shop %>
+    <% end %>
+    <%= link_to (image_tag shop.img_url), shop_path(shop) %>
+  </div>
+  <% end %>
+</div>

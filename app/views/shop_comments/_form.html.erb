@@ -1,0 +1,22 @@
+<div id="error_explanation">
+  <% @shop_comment.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+</div>
+
+<%= form_for [@shop, @shop_comment] do |f| %>
+  <p>
+    <%= f.label :heading, 'Title' %><br>
+    <%= f.text_field :heading %>
+  </p>
+
+  <p>
+    <%= f.label :body, 'Detail' %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
